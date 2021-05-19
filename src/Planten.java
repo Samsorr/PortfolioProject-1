@@ -1,30 +1,23 @@
 import java.util.ArrayList;
 
-public class Planten {
+public abstract class Planten {
 
     private String naam;
     private String soort;
     private int waterbehoefte;
-    private static ArrayList<Planten> plantenlijst = new ArrayList<>();
+    private int interval;
 
 
-    public Planten(String naam, String soort, int waterbehoefte) {
-            soortCheck(soort);
+    public Planten(String naam, String soort, int waterbehoefte, int interval) {
             waterCheck(waterbehoefte);
             this.naam = naam;
             this.soort = soort;
             this.waterbehoefte = waterbehoefte;
-            plantenlijst.add(this);
+            this.interval =interval;
+
         }
 
-
-    public boolean soortCheck(String soort){
-            if(!(soort.equals("Kentiapalm") || soort.equals("Alocasia") || soort.equals("Coco"))){
-                throw new IllegalArgumentException("Error, verkeerde soort");
-            }
-        return true;
-    }
-    public boolean waterCheck(int waterbehoefte){
+    public static boolean waterCheck(int waterbehoefte){
         if(waterbehoefte <= 2){
             throw new IllegalArgumentException("Error, waterbehoefte te laag");
         }
@@ -44,7 +37,14 @@ public class Planten {
         return waterbehoefte;
     }
 
-    public static ArrayList<Planten> getPlantenlijst() {
-        return plantenlijst;
+    public void setWaterbehoefte(int waterbehoefte) {
+        this.waterbehoefte = waterbehoefte;
     }
+
+    public int getInterval() {
+        return interval;
+    }
+
+
+    public abstract String toString();
 }
