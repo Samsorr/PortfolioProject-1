@@ -1,14 +1,20 @@
 public class Kentiaplam extends Planten {
     public static final String SOORT = "Kentiaplam";
+    private int interval;
 
     public Kentiaplam(String naam, String soort, int waterbehoefte, int interval){
-        super(naam, soort, waterbehoefte, interval);
+        super(naam, soort, waterbehoefte);
+        this.interval =interval;
     }
 
 
     public static String getSOORT() {
         return SOORT;
     }
+
+    public int getInterval() { return interval;}
+
+    public int setInterval() { return interval; }
 
     @Override
     public String toString() {
