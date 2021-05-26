@@ -2,8 +2,8 @@ public class Coco extends Planten {
 
     public static final String SOORT = "Coco";
 
-    public Coco(String naam, String soort, int waterbehoefte){
-        super(naam, soort, waterbehoefte);
+    public Coco(String naam, String soort, int waterbehoefte, int phWaarde){
+        super(naam, soort, waterbehoefte, phWaarde);
     }
 
 
@@ -13,10 +13,11 @@ public class Coco extends Planten {
 
     @Override
     public String toString() {
-        String result = String.format("Plant [Naam: %s , Soort: %s, Waterbehoefte: %d] \n ",
+        String result = String.format("Plant [Naam: %s , Soort: %s, Waterbehoefte: %d, PH: %d] \n ",
                 getNaam(),
                 getSOORT(),
-                getWaterbehoefte());
+                getWaterbehoefte(),
+                getPhWaarde());
         return result;
     }
 

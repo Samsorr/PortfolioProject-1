@@ -2,8 +2,8 @@ public class Kentiaplam extends Planten {
     public static final String SOORT = "Kentiaplam";
     private int interval;
 
-    public Kentiaplam(String naam, String soort, int waterbehoefte, int interval){
-        super(naam, soort, waterbehoefte);
+    public Kentiaplam(String naam, String soort, int waterbehoefte, int phWaarde, int interval){
+        super(naam, soort, waterbehoefte, phWaarde);
         this.interval =interval;
     }
 
@@ -18,11 +18,12 @@ public class Kentiaplam extends Planten {
 
     @Override
     public String toString() {
-        String result = String.format("Plant [Naam: %s , Soort: %s, Waterbehoefte: %d, Interval: %d] \n ",
+        String result = String.format("Plant [Naam: %s , Soort: %s, Waterbehoefte: %d, Interval: %d, PH: %d] \n ",
                 getNaam(),
                 getSOORT(),
                 getWaterbehoefte(),
-                getInterval());
+                getInterval(),
+                getPhWaarde());
         return result;
     }
 

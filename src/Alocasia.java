@@ -3,8 +3,8 @@ public class Alocasia extends Planten {
     public static final String SOORT = "Alocasia";
     int humidity;
 
-    public Alocasia(String naam, String soort, int waterbehoefte, int humidity){
-        super(naam, soort, waterbehoefte);
+    public Alocasia(String naam, String soort, int waterbehoefte, int phWaarde, int humidity){
+        super(naam, soort, waterbehoefte, phWaarde);
         if(!soort.equals("Alocasia")){
             throw new IllegalArgumentException();
         }
@@ -20,10 +20,11 @@ public class Alocasia extends Planten {
 
     @Override
     public String toString() {
-        String result = String.format("Plant [Naam: %s , Soort: %s, Waterbehoefte: %d, Humidity: %d] \n ",
+        String result = String.format("Plant [Naam: %s , Soort: %s, Waterbehoefte: %d, PH: %d Humidity: %d] \n ",
                 getNaam(),
                 getSOORT(),
                 getWaterbehoefte(),
+                getPhWaarde(),
                 getHumidity());
         return result;
     }

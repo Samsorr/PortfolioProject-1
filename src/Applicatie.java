@@ -29,9 +29,13 @@ public class Applicatie {
                 String naam = sc.next();
 
                 int waterbehoefte = Integer.MIN_VALUE;
+                int phWaarde = Integer.MIN_VALUE;
 
                 System.out.print("Waterbehoefte: ");
                 waterbehoefte = sc.nextInt();
+
+                System.out.println("PH: ");
+                phWaarde = sc.nextInt();
 
 
                 Planten plant = null;
@@ -40,14 +44,14 @@ public class Applicatie {
                     int humidity = Integer.MIN_VALUE;
                     System.out.print("Humidity: ");
                     humidity = sc.nextInt();
-                    plant = new Alocasia(naam, Alocasia.SOORT, waterbehoefte, humidity);
+                    plant = new Alocasia(naam, Alocasia.SOORT, waterbehoefte, phWaarde, humidity);
                 } else if (option == 3) {
-                    plant = new Coco(naam, Coco.SOORT, waterbehoefte);
+                    plant = new Coco(naam, Coco.SOORT, waterbehoefte, phWaarde);
                 } else {
                     int interval = Integer.MIN_VALUE;
                     System.out.print("Interval: ");
                     interval = sc.nextInt();
-                    plant = new Kentiaplam(naam, Kentiaplam.SOORT, waterbehoefte, interval);
+                    plant = new Kentiaplam(naam, Kentiaplam.SOORT, waterbehoefte, phWaarde, interval);
                 }
 
                 plantenCatalog.add(plant);
