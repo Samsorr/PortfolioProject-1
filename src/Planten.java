@@ -31,6 +31,8 @@ public abstract class Planten {
         return true;
     }
 
+    public abstract boolean kwaliteitCheck();
+
 
     public String getNaam() {
         return naam;
