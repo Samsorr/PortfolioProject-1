@@ -7,6 +7,10 @@ public class Kentiaplam extends Planten {
         this.interval =interval;
     }
 
+    @Override
+    public boolean kwaliteitCheck() {
+        return false;
+    }
 
     public static String getSOORT() {
         return SOORT;
