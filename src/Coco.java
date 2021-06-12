@@ -6,6 +6,11 @@ public class Coco extends Planten {
         super(naam, soort, waterbehoefte, phWaarde);
     }
 
+    @Override
+    public boolean kwaliteitCheck() {
+        return false;
+    }
+
 
     public static String getSOORT() {
         return SOORT;

@@ -11,6 +11,11 @@ public class Alocasia extends Planten {
         this.humidity = humidity;
     }
 
+    @Override
+    public boolean kwaliteitCheck() {
+        return false;
+    }
+
 
     public static String getSOORT() {
         return SOORT;
