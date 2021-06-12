@@ -4,12 +4,11 @@ public class Login {
 
 
         private static Login singleton;
-        private ArrayList<Gebruiker> gebruikers;
         private Gebruiker gebruiker;
 
         private Login () {
-            gebruikers = new ArrayList<> ();
-            gebruikers.add (new Gebruiker ("Samsor", "1234"));
+
+            gebruiker = new Gebruiker ("Hannah", "1234");
 
         }
 
@@ -22,16 +21,37 @@ public class Login {
             return singleton;
         }
 
-        private boolean gebruikerBekend (String name) {
+    public String getGebruikersnaam () {
 
-            for (Gebruiker gebruiker : gebruikers) {
-                if (gebruiker.getName().equals(name)) {
-                    this.gebruiker = gebruiker;
-                    return true;
-                }
-            }
-            return false;
+        if (gebruiker == null) {
+            return "";
         }
+
+        return gebruiker.getNaam();
+    }
+
+    public String getWachtwoord () {
+
+        if (gebruiker == null) {
+            return "";
+        }
+
+        return gebruiker.getWachtwoord();
+    }
 
 
 }
+
+
+/**
+ private boolean gebruikerBekend (String name) {
+
+ for (Gebruiker gebruiker : gebruikers) {
+ if (gebruiker.getNaam().equals(name)) {
+ this.gebruiker = gebruiker;
+ return true;
+ }
+ }
+ return false;
+ }
+*/
