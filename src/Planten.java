@@ -1,9 +1,13 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Planten {
 
     private String naam;
     private String soort;
     private int waterbehoefte;
     private int phWaarde;
+    private List<Planten> plants;
 
 
 
@@ -14,7 +18,8 @@ public abstract class Planten {
             this.soort = soort;
             this.waterbehoefte = waterbehoefte;
             this.phWaarde = phWaarde;
-
+            plants = new ArrayList<>();
+            plants.add(this);
         }
 
     public static boolean waterCheck(int waterbehoefte){

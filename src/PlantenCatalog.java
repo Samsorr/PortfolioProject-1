@@ -31,15 +31,5 @@ public class PlantenCatalog {
         return sortedList;
     }
 }
-/*
-        public List<Printer> sortBrand(){
-            List<Printer> sortedList = new ArrayList<>();
-            for (Printer printer: planten) {
-                sortedList.add(printer);
-            }
 
-            sortedList.sort(new PrinterBrandComparator());
-            return sortedList;
-        }
-**/
 

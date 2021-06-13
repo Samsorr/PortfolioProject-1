@@ -4,7 +4,6 @@ public class Applicatie {
     private static PlantenCatalog plantenCatalog;
 
     public static void main(String[] args) {
-        plantenCatalog = new PlantenCatalog();
         Scanner sc = new Scanner(System.in);
         boolean running = true;
 
@@ -21,7 +20,7 @@ public class Applicatie {
 
             if (option == 1) {
                 System.out.print("Here is the entire Planten catalogue: \n");
-                for (Planten plant : plantenCatalog.sortType()) {
+                for (Planten plant : Connect.selectPlant() ) {
                     System.out.print(plant.toString());
                 }
             } else if (option == 2 || option == 3 || option == 4) {
@@ -41,20 +40,23 @@ public class Applicatie {
                 Planten plant = null;
 
                 if (option == 2) {
-                    int humidity = Integer.MIN_VALUE;
+                    int luchtVochtigheid = Integer.MIN_VALUE;
                     System.out.print("Humidity: ");
-                    humidity = sc.nextInt();
-                    plant = new Alocasia(naam, Alocasia.SOORT, waterbehoefte, phWaarde, humidity);
+                    luchtVochtigheid = sc.nextInt();
+                    plant = new Alocasia(naam, Alocasia.SOORT, waterbehoefte, phWaarde, luchtVochtigheid);
+                    Connect.insertPlant(naam, Alocasia.SOORT, waterbehoefte, phWaarde, null, luchtVochtigheid);
                 } else if (option == 3) {
                     plant = new Coco(naam, Coco.SOORT, waterbehoefte, phWaarde);
+                    Connect.insertPlant(naam, Coco.SOORT, waterbehoefte, phWaarde, null, null);
                 } else {
                     int interval = Integer.MIN_VALUE;
                     System.out.print("Interval: ");
                     interval = sc.nextInt();
                     plant = new Kentiaplam(naam, Kentiaplam.SOORT, waterbehoefte, phWaarde, interval);
+                    Connect.insertPlant(naam, Kentiaplam.SOORT, waterbehoefte, phWaarde, interval, null);
                 }
 
-                plantenCatalog.add(plant);
+
             }
 
             else if (option == 5) {
