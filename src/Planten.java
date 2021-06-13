@@ -12,15 +12,15 @@ public abstract class Planten {
 
 
     public Planten(String naam, String soort, int waterbehoefte, int phWaarde) {
-            waterCheck(waterbehoefte);
-            phWaardeCheck(phWaarde);
-            this.naam = naam;
-            this.soort = soort;
-            this.waterbehoefte = waterbehoefte;
-            this.phWaarde = phWaarde;
-            plants = new ArrayList<>();
-            plants.add(this);
-        }
+        waterCheck(waterbehoefte);
+        //phWaardeCheck(phWaarde);
+        this.naam = naam;
+        this.soort = soort;
+        this.waterbehoefte = waterbehoefte;
+        this.phWaarde = phWaarde;
+        plants = new ArrayList<>();
+        plants.add(this);
+    }
 
     public static boolean waterCheck(int waterbehoefte){
         if(waterbehoefte <= 2){
@@ -53,6 +53,26 @@ public abstract class Planten {
 
     public int getPhWaarde() {
         return phWaarde;
+    }
+
+    public void setNaam(String naam) {
+        this.naam = naam;
+    }
+
+    public void setSoort(String soort) {
+        this.soort = soort;
+    }
+
+    public void setWaterbehoefte(int waterbehoefte) {
+        this.waterbehoefte = waterbehoefte;
+    }
+
+    public void setPhWaarde(int phWaarde) {
+        this.phWaarde = phWaarde;
+    }
+
+    public void setPlants(List<Planten> plants) {
+        this.plants = plants;
     }
 
     public abstract String toString();

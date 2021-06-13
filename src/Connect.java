@@ -94,10 +94,15 @@ public class Connect {
 
         try{
             connection = DriverManager.getConnection(dburl, dbuser, dbpassword);
-            String sql = "INSERT INTO Plant(naam, soort, waterbehoefte, phWaarde, interval, luchtVochtigheid) VALUES(?,?,?,?,?,?)";
-            getStmt = connection.createStatement();
-            getStmt.executeUpdate(sql);
-            getStmt.close();
+            String sql = "INSERT INTO `PlantDB`.`Plant` (`Plant_naam`, `Plant_soort`, `Plant_waterbehoefte`, `Plant_phWaarde`, `Plant_interval`, `Plant_luchtVochtigheid` ) VALUES (?,?,?,?,?,?)";
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+            pstmt.setString(1,naam);
+            pstmt.setString(2, soort);
+            pstmt.setInt(3, waterbehoefte);
+            pstmt.setInt(4, phWaarde);
+            pstmt.setObject(5,interval, Types.INTEGER);
+            pstmt.setObject(6,luchtVochtigheid, Types.INTEGER);
+            pstmt.executeUpdate();
             connection.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -109,11 +114,9 @@ public class Connect {
      * Update de gegevens van de plant
      *
      * @param plant
-     * @param interval
-     * @param luchtVochtigheid
      */
 
-    public static void updatePlant(Planten plant, Integer interval, Integer luchtVochtigheid) {
+    public static void updatePlant(Planten plant) {
 
         try{
             connection = DriverManager.getConnection(dburl, dbuser, dbpassword);
@@ -122,8 +125,6 @@ public class Connect {
                     + "', Plant_soort = '" + plant.getSoort()
                     + "', Plant_waterbehoefte = '" + plant.getWaterbehoefte()
                     + "', Plant_phWaarde = '" + plant.getPhWaarde()
-                    + "', Plant_interval = '" + interval
-                    + "', Plant_luchtVochtigheid = '" + luchtVochtigheid
                     + "' WHERE Plant_naam = '" + plant.getNaam() + "';";
             getStmt = connection.createStatement();
             getStmt.executeUpdate(sql);
