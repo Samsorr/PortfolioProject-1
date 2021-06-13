@@ -24,7 +24,7 @@ public class Connect {
 
 
     //login details of the database
-    private static final String dburl = "jdbc:mysql://localhost/PlantDB";
+    private static final String dburl = "jdbc:mysql://localhost/PlantDB?serverTimezone=Europe/Rome";
     private static final String dbuser = "root";
     private static final String dbpassword = "";
 
@@ -51,7 +51,6 @@ public class Connect {
             resultSet = getStmt.executeQuery(sql);
 
             while(resultSet.next()) {
-                int id = resultSet.getInt("Plant_id");
                 String naam = resultSet.getString("Plant_naam");
                 String soort = resultSet.getString("Plant_soort");
                 int waterbehoefte = resultSet.getInt("Plant_waterbehoefte");

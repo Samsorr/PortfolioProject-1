@@ -18,7 +18,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" scope="PROVIDED">
+    <orderEntry type="module-library">
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/jssc-2.8.0.jar!/" />
@@ -26,6 +26,15 @@
         <JAVADOC />
         <SOURCES />
         <jarDirectory url="jar://$MODULE_DIR$/lib/jssc-2.8.0.jar!/" recursive="false" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/mysql-connector-java-8.0.22 copy/mysql-connector-java-8.0.22.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
       </library>
     </orderEntry>
   </component>
