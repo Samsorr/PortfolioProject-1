@@ -10,10 +10,9 @@ public abstract class Planten {
     private List<Planten> plants;
 
 
-
     public Planten(String naam, String soort, int waterbehoefte, int phWaarde) {
         waterCheck(waterbehoefte);
-        //phWaardeCheck(phWaarde);
+
         this.naam = naam;
         this.soort = soort;
         this.waterbehoefte = waterbehoefte;
@@ -22,21 +21,17 @@ public abstract class Planten {
         plants.add(this);
     }
 
-    public static boolean waterCheck(int waterbehoefte){
-        if(waterbehoefte <= 2){
+    public static boolean waterCheck(int waterbehoefte) {
+        if (waterbehoefte <= 2) {
             throw new IllegalArgumentException("Waterbehoefte te laag");
         }
         return true;
     }
 
-    public static boolean phWaardeCheck(int phWaarde){
-        if(phWaarde > 7 || phWaarde < 5){
-            throw new IllegalArgumentException("PH verkeerd");
-        }
-        return true;
-    }
 
     public abstract boolean kwaliteitCheck();
+
+    public abstract String toString();
 
 
     public String getNaam() {
@@ -75,5 +70,5 @@ public abstract class Planten {
         this.plants = plants;
     }
 
-    public abstract String toString();
 }
+

@@ -40,8 +40,8 @@ public class Connect {
      * @return plants
      */
 
-    public static List<Planten> selectPlant(){
-        List<Planten> plants = new ArrayList<>();
+    public static ArrayList<Planten> selectPlant(){
+        ArrayList<Planten> plants = new ArrayList<>();
 
         try{
             connection = DriverManager.getConnection(dburl, dbuser, dbpassword);
@@ -116,16 +116,11 @@ public class Connect {
      * @param plant
      */
 
-    public static void updatePlant(Planten plant) {
+    public static void updatePlant(Planten plant, String naam) {
 
         try{
             connection = DriverManager.getConnection(dburl, dbuser, dbpassword);
-            String sql = "UPDATE Plant " +
-                    "SET Plant_naam = '" + plant.getNaam()
-                    + "', Plant_soort = '" + plant.getSoort()
-                    + "', Plant_waterbehoefte = '" + plant.getWaterbehoefte()
-                    + "', Plant_phWaarde = '" + plant.getPhWaarde()
-                    + "' WHERE Plant_naam = '" + plant.getNaam() + "';";
+            String sql = "UPDATE `PlantDB`.`Plant` SET `Plant_naam` = '" + plant.getNaam() + "', `Plant_waterbehoefte` = '" + plant.getWaterbehoefte() + "' WHERE (`Plant_naam` = '" + naam + "');";
             getStmt = connection.createStatement();
             getStmt.executeUpdate(sql);
             getStmt.close();
@@ -139,14 +134,14 @@ public class Connect {
     /**
      * Verwijder een plant uit de database.
      *
-     * @param naam
+     * @param plant
      */
 
-    public static void deletePlant(String naam) {
+    public static void deletePlant(Planten plant) {
 
         try{
             connection = DriverManager.getConnection(dburl, dbuser, dbpassword);
-            String sql = "DELETE FROM 'PlantDB'.'Plant' WHERE ('Plant_naam' = '" + naam + "');";
+            String sql = "DELETE FROM `PlantDB`.`Plant` WHERE (`Plant_naam` = '" + plant.getNaam() + "');";
             getStmt = connection.createStatement();
             getStmt.executeUpdate(sql);
             getStmt.close();

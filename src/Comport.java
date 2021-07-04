@@ -23,7 +23,11 @@ import java.util.*; // Scanner
  * Gebruik Arduino voorbeeld "7A.Temperaturesensor-Bluetooth.ino" om data te genereren.
  */
 
+
+
+
 /**
+
 public class Comport {
 
     private static SerialPort serialPort;
