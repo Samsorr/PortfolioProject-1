@@ -3,15 +3,34 @@ import java.util.List;
 
 public class PlantenCatalog {
 
-    private List<Planten> planten;
+    private static ArrayList<Planten> planten;
 
     public PlantenCatalog() {
         this.planten = new ArrayList<>();
     }
 
-    public void add(Planten plant) {
+    public static void add(Planten plant) {
         planten.add(plant);
     }
+
+
+    public static ArrayList<Planten> retrieveCatalog(){
+        return planten = Connect.selectPlant();
+    }
+
+    public static ArrayList<Planten> getPlanten() {
+        return planten;
+    }
+
+    public static void updatePlant(Planten plant) {
+        planten.removeIf(plant1 -> plant1.equals(plant));
+        planten.add(plant);
+    }
+
+    public static void deletePlant(Planten plant) {
+        planten.removeIf(plant1 -> plant1.equals(plant));
+    }
+
 
     public String toString() {
         String result = "";
@@ -23,13 +42,6 @@ public class PlantenCatalog {
     }
 
 
-    public List<Planten> sortType() {
-        List<Planten> sortedList = new ArrayList<>();
-        for (Planten plant : planten) {
-            sortedList.add(plant);
-        }
-        return sortedList;
-    }
 }
 
 

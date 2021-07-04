@@ -13,7 +13,10 @@ public class Alocasia extends Planten {
 
     @Override
     public boolean kwaliteitCheck() {
-        return false;
+        if(getPhWaarde() < 3 || getWaterbehoefte() < 2 || getLuchtVochtigheid() < 1){               //deze waarde zijn niet gewenst en melden dit aan de gebruiker.
+            return false;
+        }
+        return true;
     }
 
 
