@@ -9,7 +9,10 @@ public class Kentiaplam extends Planten {
 
     @Override
     public boolean kwaliteitCheck() {
-        return false;
+        if(getPhWaarde() < 3 || getWaterbehoefte() < 4){               //deze waarde zijn niet gewenst en melden dit aan de gebruiker.
+            return false;
+        }
+        return true;
     }
 
     public static String getSOORT() {

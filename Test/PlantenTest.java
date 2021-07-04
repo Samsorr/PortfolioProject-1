@@ -14,12 +14,12 @@ public class PlantenTest {
     @Test
     public void pairwiseTest2() {
         Planten plant2 = new Coco("Ria", "Coco", 7,6);
-        assertTrue(plant2.getSoort().equals("Coco") && plant2.getWaterbehoefte() == 7 &&  plant2.getPhWaarde() == 6);
+        assertTrue(plant2.getSoort().equals("Coco") && plant2.getWaterbehoefte() == 7 &&  plant2.getPhWaarde() == 6 );
     }
 
     @Test
     public void pairwiseTest3(){
-        Planten plant3 = new Kentiaplam("Ria", "Kentiapalm", 6,7,12);
+        Planten plant3 = new Kentiaplam("Ria", "Kentiapalm", 6,6,12);
         assertTrue(plant3.getSoort().equals("Kentiapalm") && plant3.getWaterbehoefte() == 6 &&  plant3.getPhWaarde() == 7);
     }
 
@@ -36,7 +36,7 @@ public class PlantenTest {
     @Test
     public void pairwiseTest6(){
         Planten plant6 = new Alocasia("Ria", "Alocasia", 3,5,12);
-        assertTrue(plant6.getSoort().equals("Alocasia") && plant6.getWaterbehoefte() == 3 &&  plant6.getPhWaarde() == 5);
+        assertTrue(plant6.getSoort().equals("Alocasia") && plant6.getWaterbehoefte() == 3 &&  plant6.getPhWaarde() == 6);
     }
 
 /*
