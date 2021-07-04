@@ -97,15 +97,3 @@ public class Login {
 }
 
 
-/**
- private boolean gebruikerBekend (String name) {
-
- for (Gebruiker gebruiker : gebruikers) {
- if (gebruiker.getNaam().equals(name)) {
- this.gebruiker = gebruiker;
- return true;
- }
- }
- return false;
- }
-*/
