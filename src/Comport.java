@@ -3,28 +3,6 @@ import java.text.SimpleDateFormat;
 import java.util.*; // Scanner
 // import jssc.*;
 
-/**
- * Eerste versie: 20190613 Gert den Neijsel
- * Deze versie: 20201208  Gert den Neijsel
- * Dit programma leest data vanaf de seriële poort uit (vanaf bijv. Arduino of Microbit) en insert dit in een SQL database.
- *
- * Deze versie is getest met de volgende software versies:
- * MySQL versie 8.0.13
- * IntelliJ v2020.3
- * Java JDK 1.8.0_271 (JavaSE-1.8)  x86 / 32-bits versie !!!
- *
- * Deze libraries zijn in het project opgenomen:
- * jssc-2.8.0.jar
- * mysql-connector-java-8.0.22.jar
- * protobuf-java-3.11.4.jar
- *
- * Bron van de ComPortSendReceive klasse: https://www.codeproject.com/tips/801262/sending-and-receiving-strings-from-com-port-via-js
- *
- * Gebruik Arduino voorbeeld "7A.Temperaturesensor-Bluetooth.ino" om data te genereren.
- */
-
-
-
 
 /**
 
